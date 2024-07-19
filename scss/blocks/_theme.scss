@@ -55,6 +55,9 @@ $h2FontSize: 28px;
 // Розмір для тегу h3
 $h3FontSize: 20px;
 
+// Стандартний font-weight
+$mainFontWeight: 400;
+
 // Вага шрифта для h1
 $h1FontWeight: 900;
 
@@ -86,7 +89,7 @@ $buttonActive: rgb(16, 77, 97);
 
 //---Максимальна довжина обмежуючого контейнера---
 // Обмежуючий контейнер - це контейнер з класом .container - призначений для рівної геометрії сайту
-$maxWidthContaine: 1170px;
+$maxWidthContainer: 1170px;
 
 // Стандартні паддінги (внутрішні відступи) в контейнері
 $paddingContainer: 15px;
@@ -130,12 +133,13 @@ $desktopBig: 1400px;
 body {
     background-color: $bgColor;
     color: $fontColor;
-    font-family: $fontFamily
+    font-family: $fontFamily;
+    font-weight: $mainFontWeight;
 }
 
 // Обмежуючий контейнер - цей контейнер часто зустрічається в проектах, якщо сайт має певну геометрію.
 .container {
-    max-width: $maxWidthContaine;
+    max-width: $maxWidthContainer;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px

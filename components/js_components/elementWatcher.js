@@ -27,12 +27,12 @@ export function initializeElementWatcher() {
                 const element = entry.target; // Елемент, за яким спостерігаємо
                 if (entry.isIntersecting) {
                     // Якщо елемент видимий, додаємо клас і виводимо повідомлення в консоль
-                    element.classList.add('el-watcher--view');
-                    console.log(`Додано клас el-watcher--view до елемента з класами: ${element.className}`);
+                    element.classList.add('_watcher--view');
+                    console.log(`Додано клас _watcher--view до елемента з класами: ${element.className}`);
                 } else {
                     // Якщо елемент не видимий, видаляємо клас і виводимо повідомлення в консоль
-                    element.classList.remove('el-watcher--view');
-                    console.log(`Видалено клас el-watcher--view з елемента з класами: ${element.className}`);
+                    element.classList.remove('_watcher--view');
+                    console.log(`Видалено клас _watcher--view з елемента з класами: ${element.className}`);
                 }
             });
         };
@@ -45,7 +45,7 @@ export function initializeElementWatcher() {
         // ---------------------------------------------------------------------------------------------------------------
         // Отримуємо всі елементи, які мають атрибут data-watch="true"
         // ---------------------------------------------------------------------------------------------------------------
-        const elementsToWatch = document.querySelectorAll('[data-watch="true"]');
+        const elementsToWatch = document.querySelectorAll('[data-watch]');
 
         // ---------------------------------------------------------------------------------------------------------------
         // Починаємо спостерігати за кожним елементом

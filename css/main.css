@@ -312,3 +312,51 @@ ol li:not(:last-child) {
     transform: scale(1);
   }
 }
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Стилі для модального вікна, коли воно активно */
+:target.modal {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Стилі для кнопки закриття */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+}
+
+/* Стилі для кнопки закриття overlay */
+.close-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+}

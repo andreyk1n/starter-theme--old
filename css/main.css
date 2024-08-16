@@ -17,7 +17,7 @@ body {
   font-weight: 400;
 }
 
-.container {
+[class*=__container] {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;

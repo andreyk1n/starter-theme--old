@@ -33,3 +33,8 @@
 // initBurgerMenu();
 
 // ---------------------------------------------------------------------------------------------------------------
+
+
+import { initAccordion } from './js_components/accordion.js';
+
+initAccordion();

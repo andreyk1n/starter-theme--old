@@ -245,7 +245,7 @@ html {
 }
 
 // Загальні стилі для списків
-ol {
+ol, ul {
     padding-left: 20px;
     li:not(:last-child) {
         padding-bottom: 15px;

@@ -3,12 +3,15 @@
 // саме для хедера
 // ---------------------------------------------------------------------------------------------------------------
 export function initScrollControlledHeader() {
-    let lastScrollTop = 0;
-  
-    window.addEventListener('scroll', () => {
-      const { scrollTop } = document.documentElement;
-      document.querySelector('.header').style.top = (scrollTop > lastScrollTop) ? '-80px' : '0';
-      lastScrollTop = scrollTop;
-    });
-  }
+
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    document.querySelector('.header').style.top = (scrollTop <= 10 || scrollTop < lastScrollTop) ? '0' : '-80px';
+    lastScrollTop = scrollTop;
+  });
+
+}
 // ---------------------------------------------------------------------------------------------------------------
+
+

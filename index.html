@@ -55,7 +55,16 @@
         
       </div>
 
-      <script type="module" src="./components/app.js"></script>
+      <!-- <script type="module" src="./components/app.js" defer></script> -->
+
+      <script>
+        setTimeout(() => {
+          const script = document.createElement('script');
+          script.type = 'module';
+          script.src = './components/app.js';
+          document.body.appendChild(script);
+        }, 2500); // затримка в 2500 мілісекунд (2,5 секунди)
+      </script>
 
 
 </body>

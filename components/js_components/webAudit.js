@@ -163,13 +163,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function checkDuplicateContent() {
-        // Цю перевірку можна реалізувати, перевіряючи текст на сторінці на дублікат.
-        logError("Перевірте наявність дублікатів контенту на сторінці.");
+        const textElements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span, li, div"); // Вибираємо текстові елементи
+        const textMap = new Map(); // Використовуємо Map для відстеження унікальних текстів
+    
+        textElements.forEach(el => {
+            const textContent = el.textContent.trim();
+            if (textContent && textMap.has(textContent)) {
+                logError("Дубльований текстовий контент:", el);
+            } else if (textContent) {
+                textMap.set(textContent, true);
+            }
+        });
     }
-
+    
     function checkBlockingScripts() {
-        // Перевірка наявності скриптів, які блокують рендеринг.
-        logError("Перевірте наявність скриптів, які можуть блокувати рендеринг.");
+        document.querySelectorAll("script").forEach(script => {
+            const hasAsyncOrDefer = script.hasAttribute("async") || script.hasAttribute("defer");
+            if (!hasAsyncOrDefer && !script.src.includes("://")) { // Перевіряємо тільки внутрішні скрипти
+                logError("Скрипт без async або defer, який може блокувати рендеринг:", script);
+            }
+        });
     }
 
     function checkMediaAltAttributes() {

@@ -1,0 +1,8 @@
+# Вимкнути node_modules та інші тимчасові файли
+node_modules/
+.DS_Store
+*.log
+dist/
+.sass-cache/
+.vscode/
+.idea/
